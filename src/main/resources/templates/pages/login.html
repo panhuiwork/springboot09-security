@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+.error{color:red;}
+</style>
+<body>
+	<h1 align="center">欢迎登陆武林秘籍管理系统</h1>
+	<hr>
+	<div align="center">
+		<form th:action="@{/userlogin}" method="post">
+		<!--  <p th:if="${loginError}" class="error">账户或者密码错误!</p> -->
+		 <p th:if="${param.error}" class="error">账户或者密码错误!</p>
+		<br/>
+			用户名:<input name="user"/><br>
+			密码:<input name="pwd"><br/>
+			<label for="remember-me">Remember Me?</label>
+        	<input type="checkbox" id="remember-me" name="remeber"/>
+			<input type="submit" value="登陆">
+		</form>
+	</div>
+</body>
+</html>
